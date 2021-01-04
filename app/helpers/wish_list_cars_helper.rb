@@ -1,0 +1,2 @@
+module WishListCarsHelper
+end
