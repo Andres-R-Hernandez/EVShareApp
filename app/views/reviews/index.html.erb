@@ -1,0 +1,10 @@
+<h1>Index for Reviews</h1>
+
+<ul>
+    <% @reviews.each do |review| %>
+    <li>
+     <%= link_to review.star_rating, review %>
+    </li>
+    <br>
+    <% end %>
+</ul>
