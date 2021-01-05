@@ -28,4 +28,8 @@ end
     params.require(:user).permit(:name, :age, :driver_id, :address, :email, :password, :password_confirmation)
   end
 
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
+  end
+
 end
