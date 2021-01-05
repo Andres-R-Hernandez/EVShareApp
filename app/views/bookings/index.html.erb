@@ -1,0 +1,10 @@
+<h1>Index for Bookings</h2>
+
+<ul>
+    <% @bookings.each do |booking| %>
+    <li>
+     <%= booking.booking_time %>
+    </li>
+    <br>
+    <% end %>
+</ul>
