@@ -1,5 +1,12 @@
 <h1>Show Review</h1>
 
-<%= @review.booking_time  %><br>
-<%= @review.owned_car.year %> <%= @review.owned_car.car_model.brand %> <%= @review.owned_car.car_model.model %><br>
+<%= @review.booking.booking_time  %><br>
+<%= @review.star_rating  %><br>
+<%= @review.description  %><br>
+<%= @review.booking.booking_time %>
+<br>
+<%= @review.booking.owned_car.car_model.brand %>
+<br>
+<%= @review.booking.owned_car.car_model.model %>
+<br>
 <%= @review.user.name %><br>
