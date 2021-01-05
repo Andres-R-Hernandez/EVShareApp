@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_01_04_220948) do
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "car_model_id"
+    t.integer "owned_car_id"
     t.integer "user_id"
     t.datetime "booking_time"
     t.datetime "created_at", precision: 6, null: false
