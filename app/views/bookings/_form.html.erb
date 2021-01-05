@@ -1,0 +1,9 @@
+
+<%= form_for @booking do |f| %>
+  <%= f.label :booking_time %>
+  <%= f.datetime_local_field :booking_time %>
+  <%= f.label :owned_car_id %>
+  <%= f.collection_select :owned_car_id, OwnedCar.all, :id, :city %>
+<%# we need to update the output of the collection select and associate the user with the booking in a hidden field %>
+  <%= f.submit %>
+<% end %>
