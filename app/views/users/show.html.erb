@@ -1,0 +1,23 @@
+<h1><%= @user.name %></h1>
+
+<b>Age: </b><%= @user.age %><br>
+<br>
+<b>Driver ID: </b><%= @user.driver_id %><br>
+<br>
+<b>Address: </b><%= @user.address %><br>
+<br>
+<b>Email: </b><%= @user.email %><br>
+<br>
+<b>Rentals: </b>
+<ul>
+<% @user.bookings.each do |booking| %>
+  <li><%= booking.owned_car.car_model.brand %> <%= booking.owned_car.id %>
+<% end %>
+</ul>
+<br>
+<b>Owned Cars: </b>
+<ul>
+<% @user.owned_cars.select{|owned_car| owned_car.user_id == @user.id}.each do |car| %>
+  <li><%= car.car_model.brand %> <%= car.id %>
+<% end %>
+</ul>
