@@ -7,12 +7,13 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    if @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to "/"
       #if authentication is valid, redirect to the welcome page (until the user home page is built)
     else
-      render "form"
+      flash[:errors] = ['Email or password is incorrect']
+      redirect_to "/login"
     end
   end
 

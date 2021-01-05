@@ -1,16 +1,16 @@
 
 <%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-  <%= f.label :driver_license %>
-  <%= f.number_field :driver_id %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :age %><br>
+  <%= f.number_field :age %><br>
+  <%= f.label :driver_license %><br>
+  <%= f.number_field :driver_id %><br>
+  <%= f.label :address %><br>
+  <%= f.text_field :address %><br>
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br>
+  Password: <%= f.password_field :password %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br>
   <%= f.submit %>
 <% end %>
