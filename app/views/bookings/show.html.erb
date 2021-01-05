@@ -1,7 +1,5 @@
 <h1>Show Booking</h1>
 
-<%= @booking.booking_time  %>
-<%= @booking.car_model_id %>
-<%= @booking.user_id %>
-
- 
+<%= @booking.booking_time  %><br>
+<%= @booking.owned_car.year %> <%= @booking.owned_car.car_model.brand %> <%= @booking.owned_car.car_model.model %><br>
+<%= @booking.user.name %><br>

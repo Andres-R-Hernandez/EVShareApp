@@ -1,9 +1,9 @@
-<h1>Index for Bookings</h2>
+<h1>Index for Bookings</h1>
 
 <ul>
     <% @bookings.each do |booking| %>
     <li>
-     <%= booking.booking_time %>
+     <%= link_to booking.booking_time, booking %>
     </li>
     <br>
     <% end %>
