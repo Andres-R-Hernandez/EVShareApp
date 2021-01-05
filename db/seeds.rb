@@ -24,9 +24,6 @@ end
     OwnedCar.create(year: Faker::Vehicle.year, price_per_day: Faker::Commerce.price, city: Faker::Address.city, car_model: CarModel.all.sample, user: User.all.sample)
 end
 
-# Booking.create(owned_car: OwnedCar.first, user: User.first, booking_time: DateTime.now)
-
-# Bookings not being created for some reason
 10.times do
     Booking.create(owned_car: OwnedCar.all.sample, user: User.all.sample, booking_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1))
 end
