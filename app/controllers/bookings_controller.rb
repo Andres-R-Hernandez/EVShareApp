@@ -22,6 +22,23 @@ class BookingsController < ApplicationController
         end
     end
 
+    def edit
+        @booking = Booking.find(params[:id])
+    end
+
+    def update
+        @booking = Booking.find_by(id: params[:id]) #this is an object
+        @booking.update(booking_params)
+        redirect_to @booking
+    end
+
+    def destroy
+        @booking = Booking.find_by(id: params[:id])
+        @booking.destroy
+        redirect_to @booking
+    end
+
+
     private
 
     def booking_params
