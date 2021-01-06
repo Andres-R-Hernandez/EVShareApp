@@ -1,0 +1,10 @@
+<h1>Index for Owned Cars</h1>
+
+<ul>
+    <% @owned_cars.each do |owned_car| %>
+    <li>
+     <%= link_to owned_car.car_full_name, owned_car %>
+    </li>
+    <br>
+    <% end %>
+</ul>
