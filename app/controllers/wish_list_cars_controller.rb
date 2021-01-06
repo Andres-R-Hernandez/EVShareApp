@@ -5,18 +5,18 @@ class WishListCarsController < ApplicationController
     end
     
     def show
-        @wish_list_cars = WishListCar.find(params[:id])
+        @wish_list_car = WishListCar.find(params[:id])
     end
     
     def new
-        @wish_list_cars = WishListCar.new
+        @wish_list_car = WishListCar.new
     end
     
     def create
-        @wish_list_cars = WishListCar.new(wish_list_cars_params)
-        if @wish_list_cars.valid?
-            @wish_list_cars.save
-            redirect_to @wish_list_cars
+        @wish_list_car = WishListCar.new(wish_list_cars_params)
+        if @wish_list_car.valid?
+            @wish_list_car.save
+            redirect_to @wish_list_car
         else
             render :new
         end
@@ -25,7 +25,7 @@ class WishListCarsController < ApplicationController
     private
     
     def wish_list_cars_params
-        params.require(:wish_list_cars).permit(:user_id, :owned_car_id, :wish_list_cars_time)
+        params.require(:wish_list_car).permit(:car_model_id, :user_id)
     end
     
 end
