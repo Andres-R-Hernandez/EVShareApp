@@ -1,0 +1,7 @@
+<%= form_for @wish_list_car do |f| %>
+  
+  <%= f.label :car_model_id %>
+  <%= f.collection_select :car_model_id, CarModel.all, :id, :car_name %>
+  <%= f.hidden_field :user_id, value: session[:user_id] %>
+  <%= f.submit %>
+<% end %>

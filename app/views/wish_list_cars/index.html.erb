@@ -1,0 +1,10 @@
+<h1>Index for Wish List Cars</h1>
+
+<ul>
+    <% @wish_list_cars.each do |wish_list_car| %>
+    <li>
+     <%= link_to wish_list_car.car_model.brand, wish_list_car %>
+    </li>
+    <br>
+    <% end %>
+</ul>
