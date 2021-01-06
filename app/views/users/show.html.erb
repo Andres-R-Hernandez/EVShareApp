@@ -1,4 +1,4 @@
-<h1><%= @user.name %></h1>
+<h1 align="center"><%= @user.name %> Home Page</h1>
 
 <b>Age: </b><%= @user.age %><br>
 <br>
@@ -8,16 +8,25 @@
 <br>
 <b>Email: </b><%= @user.email %><br>
 <br>
-<b>Rentals: </b>
-<ul>
-<% @user.bookings.each do |booking| %>
-  <li><%= booking.owned_car.car_model.brand %> <%= booking.owned_car.id %>
-<% end %>
-</ul>
-<br>
 <b>Owned Cars: </b>
 <ul>
-<% @user.owned_cars.select{|owned_car| owned_car.user_id == @user.id}.each do |car| %>
-  <li><%= car.car_model.brand %> <%= car.id %>
+<% @user.owned_cars.each do |car| %>
+  <li><%= link_to car.car_full_name, car %>
 <% end %>
 </ul>
+
+<%#Add car to EV Share App Inventory!%>
+<%#(add a button to send to add owned_car form)%>
+
+<b>Requested EV Share App Cars:</b>
+<ul>
+<% @user.wish_list_cars.each do |wish| %>
+  <li><%= link_to wish.car_model.car_name, wish %>
+<% end %>
+</ul>
+<b>Upcoming Bookings: </b>
+<ol>
+<% @user.bookings.each do |booking| %>
+  <li><%= booking.owned_car.car_full_name %>: <%= link_to booking.booking_time, booking %>
+<% end %>
+</ol>
