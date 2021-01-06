@@ -24,6 +24,7 @@
     <% else %>
       <p align="right"><%= link_to "Log-in", login_path %></p>
     <% end %>
+    <%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %>
     <hr>
     <%= yield %>
   </body>

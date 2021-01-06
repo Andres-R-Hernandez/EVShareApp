@@ -4,7 +4,6 @@
   <%= f.datetime_local_field :booking_time %>
   <%= f.label :owned_car_id %>
   <%= f.collection_select :owned_car_id, OwnedCar.all, :id, :car_full_name_with_price %>
-  <%= f.collection_select :user_id, User.all, :id, :name %>
-<%# we need to update the output of the collection select and associate the user with the booking in a hidden field %>
+  <%= f.hidden_field :user_id, value: session[:user_id] %>
   <%= f.submit %>
 <% end %>
