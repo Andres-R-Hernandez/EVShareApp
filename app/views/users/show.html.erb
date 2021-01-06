@@ -8,6 +8,9 @@
 <br>
 <b>Email: </b><%= @user.email %><br>
 <br>
+<%= button_to "Edit", edit_user_path(@user), method: :get %>
+<%= button_to "Delete User", @user, method: :delete %>
+<br>
 <b>Owned Cars: </b>
 <ul>
 <% @user.owned_cars.each do |car| %>
