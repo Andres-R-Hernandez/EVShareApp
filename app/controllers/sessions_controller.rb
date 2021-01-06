@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/"
+      redirect_to @user
       #if authentication is valid, redirect to the welcome page (until the user home page is built)
     else
       flash[:errors] = ['Email or password is incorrect']
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
-    redirect_to "/login"
+    redirect_to "/"
   end
 end

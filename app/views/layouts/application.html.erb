@@ -13,18 +13,17 @@
     <center><h1>EV Share App!!!</h1></center>
     <hr>
     <center><h3>Navigation</h3></center>
-    <center>
-      <% if session[:user_id] %>
-        <%= User.find(session[:user_id]).name %> is logged in
-      <% end %>
-    </center>
     <p align="right"><%= link_to "Welcome Page", "/" %> <%= link_to "About", about_path %> <%= link_to "Car Index", car_models_path %></p>
     <% if session[:user_id]%>
-      <p align="right"><%= link_to "Log-out", logout_path, method: :post %></p>
+      <p align="right">
+        <%= User.find(session[:user_id]).name %> is logged in!<br>
+        <%= link_to "Account Profile", user_path(session[:user_id]) %><br>
+        <%= link_to "Log-out", logout_path, method: :post %>
+      </p>
     <% else %>
       <p align="right"><%= link_to "Log-in", login_path %></p>
     <% end %>
-    <%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %>
+    <%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %> <%= link_to "Wish List Index", wish_list_cars_path %>
     <hr>
     <%= yield %>
   </body>
