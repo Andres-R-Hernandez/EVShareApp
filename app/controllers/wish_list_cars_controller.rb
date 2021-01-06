@@ -21,6 +21,23 @@ class WishListCarsController < ApplicationController
             render :new
         end
     end
+
+    def edit
+        @wish_list_car = WishListCar.find(params[:id])
+    end
+
+    def update
+        @wish_list_car = Wish_list_car.find_by(id: params[:id]) #this is an object
+        @wish_list_car.update(wish_list_car_params)
+        redirect_to @wish_list_car
+    end
+
+    def destroy
+        @wish_list_car = Wish_list_car.find_by(id: params[:id])
+        @wish_list_car.destroy
+        redirect_to @wish_list_car
+    end
+    
     
     private
     

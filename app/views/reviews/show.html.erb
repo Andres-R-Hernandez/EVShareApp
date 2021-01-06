@@ -6,3 +6,7 @@ Star: <%= @review.star_rating  %><br>
 <h3><%= @review.booking.owned_car.car_model.car_name %><h3>
 <br> 
 By <%= @review.user.name %><br>
+
+<%= link_to "Edit review", edit_review_path(@review) %>
+<br>
+<%= button_to "Delete this review", @review, :method => :delete  %>

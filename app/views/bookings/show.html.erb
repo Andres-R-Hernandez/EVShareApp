@@ -3,3 +3,7 @@
 <%= @booking.booking_time  %><br>
 <%= @booking.owned_car.car_full_name %><br>
 <%= @booking.user.name %><br>
+
+<%= link_to "Edit booking", edit_booking_path(@booking) %>
+<br>
+<%= button_to "Delete this booking", @booking, :method => :delete  %>

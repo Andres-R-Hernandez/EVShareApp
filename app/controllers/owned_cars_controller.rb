@@ -22,6 +22,22 @@ class OwnedCarsController < ApplicationController
         end
     end
     
+    def edit
+        @owned_car = OwnedCar.find(params[:id])
+    end
+
+    def update
+        @owned_car = OwnedCar.find_by(id: params[:id]) #this is an object
+        @owned_car.update(owned_car_params)
+        redirect_to @owned_car
+    end
+
+    def destroy
+        @owned_car = OwnedCar.find_by(id: params[:id])
+        @owned_car.destroy
+        redirect_to @owned_car
+    end
+    
     private
     
     def owned_car_params
