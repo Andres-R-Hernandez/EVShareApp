@@ -29,7 +29,7 @@ end
 end
 
 20.times do
-    Review.create(booking: Booking.all.sample, user: User.all.sample, description: Faker::Lorem.paragraphs, star_rating: Faker::Number.decimal(l_digits: 2))
+    Review.create(booking: Booking.all.sample, user: User.all.sample, description: Faker::Lorem.paragraphs, star_rating: rand(1..10))
 end
 
 20.times do

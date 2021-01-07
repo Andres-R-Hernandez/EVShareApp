@@ -5,7 +5,12 @@ class OwnedCar < ApplicationRecord
   has_many :users, through: :bookings
 
   validates :year, presence: true
+  validates :year, numericality: {greater_than_or_equal_to: 1900}
+  validates :year, numericality: {less_than_or_equal_to: Date.current.year}
+
   validates :price_per_day, presence: true
+  validates :price_per_day, numericality: {greater_than_or_equal_to: 1}
+
   validates :city, presence: true
   validates :car_model_id, presence: true
   validates :user_id, presence: true
