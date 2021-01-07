@@ -2,9 +2,7 @@
 
 <ul>
     <% @bookings.each do |booking| %>
-    <li>
-     <%= link_to booking.booking_time, booking %>
-    </li>
-    <br>
+    <li><%= booking.id %>: <%= link_to booking.pickup_time, booking %><br><br>
     <% end %>
 </ul>
+<%= button_to "Create Booking", new_booking_path, :method => :get  %>

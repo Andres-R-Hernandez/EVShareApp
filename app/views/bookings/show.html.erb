@@ -1,9 +1,9 @@
 <h1>Show Booking</h1>
 
-<%= @booking.booking_time  %><br>
-<%= @booking.owned_car.car_full_name %><br>
-<%= @booking.user.name %><br>
+Pickup Time: <%= @booking.pickup_time  %><br>
+Dropoff Time: <%= @booking.dropoff_time  %><br>
+Rental Car: <%= @booking.owned_car.car_full_name %><br>
+Booking created By: <%= @booking.user.name %><br><br>
 
-<%= link_to "Edit booking", edit_booking_path(@booking) %>
-<br>
+<%= button_to "Edit booking", edit_booking_path(@booking), method: :get %>
 <%= button_to "Delete this booking", @booking, :method => :delete  %>

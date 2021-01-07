@@ -30,6 +30,6 @@
 <b>Upcoming Bookings: </b>
 <ol>
 <% @user.bookings.each do |booking| %>
-  <li><%= booking.owned_car.car_full_name %>: <%= link_to booking.booking_time, booking %>
+  <li><%= booking.owned_car.car_full_name %>: <%= link_to booking.pickup_time, booking %>
 <% end %>
 </ol>

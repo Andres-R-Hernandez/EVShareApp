@@ -14,8 +14,8 @@ class BookingsController < ApplicationController
 
     def create
         @booking = Booking.new(booking_params)
-        if @booking.valid?
-            @booking.save
+        
+        if @booking.save
             redirect_to @booking
         else
             render :new
@@ -29,7 +29,12 @@ class BookingsController < ApplicationController
     def update
         @booking = Booking.find_by(id: params[:id]) #this is an object
         @booking.update(booking_params)
-        redirect_to @booking
+
+        if @booking.save
+            redirect_to @booking
+        else
+            render :edit
+        end
     end
 
     def destroy
@@ -42,7 +47,7 @@ class BookingsController < ApplicationController
     private
 
     def booking_params
-        params.require(:booking).permit(:user_id, :owned_car_id, :booking_time)
+        params.require(:booking).permit(:user_id, :owned_car_id, :pickup_time, :dropoff_time)
     end
 
 end
