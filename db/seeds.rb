@@ -21,7 +21,7 @@ end
 end
 
 20.times do
-    OwnedCar.create(year: Faker::Vehicle.year, price_per_day: Faker::Commerce.price, city: Faker::Address.city, car_model: CarModel.all.sample, user: User.all.sample)
+    OwnedCar.create(color: Faker::Color.color_name, year: Faker::Vehicle.year, price_per_day: Faker::Commerce.price, city: Faker::Address.city, car_model: CarModel.all.sample, user: User.all.sample)
 end
 
 20.times do

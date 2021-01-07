@@ -45,6 +45,6 @@ class OwnedCarsController < ApplicationController
     private
 
     def owned_car_params
-        params.require(:owned_car).permit(:year, :price_per_day, :city, :car_model_id, :user_id)
+        params.require(:owned_car).permit(:year, :price_per_day, :city, :car_model_id, :user_id, :color)
     end
 end
