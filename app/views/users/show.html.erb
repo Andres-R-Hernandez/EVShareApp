@@ -8,9 +8,6 @@
 <br>
 <b>Email: </b><%= @user.email %><br>
 <br>
-<%= button_to "Edit", edit_user_path(@user), method: :get %>
-<%= button_to "Delete User", @user, method: :delete %>
-<br>
 <b>Owned Cars: </b>
 <ul>
 <% @user.owned_cars.each do |car| %>
@@ -33,3 +30,7 @@
   <li><%= booking.owned_car.car_full_name %>: <%= link_to booking.pickup_time, booking %>
 <% end %>
 </ol>
+<br>
+<hr>
+<%= button_to "Edit My Account Information", edit_user_path(@user), method: :get %>
+<%= button_to "Delete My Account", @user, method: :delete, data: { confirm:'Are you sure you want to delete your account? This action cannot be reversed!' }%>
