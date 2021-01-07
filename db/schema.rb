@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_174244) do
+ActiveRecord::Schema.define(version: 2021_01_07_185836) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "owned_car_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_174244) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
   end
 
   create_table "wish_list_cars", force: :cascade do |t|

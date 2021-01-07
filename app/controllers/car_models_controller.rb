@@ -8,6 +8,7 @@ class CarModelsController < ApplicationController
   end
 
   def new
+    return head(:forbidden) unless is_admin?
     @car_model = CarModel.new
   end
 
@@ -22,6 +23,7 @@ class CarModelsController < ApplicationController
   end
 
   def edit
+    return head(:forbidden) unless is_admin?
     @car_model = CarModel.find(params[:id])
   end
 
@@ -37,6 +39,7 @@ class CarModelsController < ApplicationController
   end
 
   def destroy
+    return head(:forbidden) unless is_admin?
     CarModel.find(params[:id]).destroy
     redirect_to car_models_path
   end

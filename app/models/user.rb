@@ -9,11 +9,11 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   # validates :password, presence: true
-  validates :password_digest, presence: true
+  # validates :password_digest, presence: true
 
   validates :email, presence: true
   validates :email, uniqueness: true
 
-  validates :age, numericality: {greater_than: 0}
+  validates :age, numericality: {greater_than: 0, allow_nil: true}
 
 end

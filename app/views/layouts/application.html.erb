@@ -23,7 +23,9 @@
     <% else %>
       <p align="right"><%= link_to "Log-in", login_path %></p>
     <% end %>
-    <%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %> <%= link_to "Wish List Index", wish_list_cars_path %> <%= link_to "Review Index", reviews_path %>
+    <% if is_admin? %>
+      <center><%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %> <%= link_to "Wish List Index", wish_list_cars_path %> <%= link_to "Review Index", reviews_path %></center>
+    <% end %>
     <hr>
     <%= yield %>
   </body>

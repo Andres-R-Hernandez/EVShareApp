@@ -12,6 +12,7 @@ Review.destroy_all
 User.destroy_all
 WishListCar.destroy_all
 
+
 20.times do
     User.create(name: Faker::Name.name , age: Faker::Number.number(digits: 2), driver_id: Faker::IDNumber.valid, address: Faker::Address.full_address , email: Faker::Internet.email, password_digest: Faker::Lorem.paragraph)
 end
@@ -35,5 +36,9 @@ end
 20.times do
     WishListCar.create(car_model: CarModel.all.sample , user: User.all.sample)
 end
+
+#admin account
+User.create!(name: "admin", email: "admin", password: "password", password_confirmation: "password", admin: true)
+
 
 puts "running seeds"
