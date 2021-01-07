@@ -17,7 +17,7 @@ WishListCar.destroy_all
 end
 
 20.times do
-    CarModel.create(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, description: Faker::Lorem.paragraphs, image_url: Faker::Avatar.image(slug: "my-own-slug",size: "50x50",format: "jpg"))
+    CarModel.create(category: Faker::Vehicle.car_type, brand: Faker::Vehicle.make, model: Faker::Vehicle.model, description: Faker::Lorem.paragraphs, image_url: Faker::Avatar.image(slug: "my-own-slug",size: "50x50",format: "jpg"))
 end
 
 20.times do

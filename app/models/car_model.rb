@@ -6,6 +6,7 @@ class CarModel < ApplicationRecord
   validates :brand, presence: true
   validates :description, presence: true
   validates :image_url, presence: true
+  validates :category, presence: true
 
   validates :model, presence: true
   validates :model, uniqueness: true

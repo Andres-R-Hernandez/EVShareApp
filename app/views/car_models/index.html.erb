@@ -5,6 +5,7 @@
     <th>Catalog #</th>
     <th>Image</th>
     <th>Car Name</th>
+    <th>Car Category</th>
     <th>Description</th>
     <th>Inventory</th>
     <th>Avg Booking Rating</th>
@@ -14,6 +15,7 @@
       <td><%= link_to car.id, car %></td>
       <td><img src="<% car.image_url %>" alt="<% car.car_name %>" ></td>
       <td><%= car.car_name %></td>
+      <td><%= car.category %></td>
       <td><%= car.description %></td>
       <td><%= car.inventory %></td>
       <td><%= car.avg_rating %></td>
