@@ -8,8 +8,8 @@
 <br>
 <b>Email: </b><%= @user.email %><br>
 <br>
-<%= button_to "Edit", edit_user_path(@user), method: :get %>
-<%= button_to "Delete User", @user, method: :delete %>
+<%= button_to "Edit My Account", edit_user_path(@user), method: :get %>
+<%= button_to "Delete My Account", @user, method: :delete %>
 <br>
 <b>Owned Cars: </b>
 <ul>
@@ -20,6 +20,7 @@
 
 <%#Add car to EV Share App Inventory!%>
 <%#(add a button to send to add owned_car form)%>
+<%= button_to "Create Owned Car", new_owned_car_path, :method => :get  %>
 
 <b>Requested EV Share App Cars:</b>
 <ul>
