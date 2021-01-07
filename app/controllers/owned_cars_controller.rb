@@ -6,6 +6,7 @@ class OwnedCarsController < ApplicationController
 
     def show
         @owned_car = OwnedCar.find(params[:id])
+        @booking = Booking.new
     end
 
     def new
