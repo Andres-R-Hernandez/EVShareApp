@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    return head(:forbidden) unless has_access(params[:id])
     @user = User.find(params[:id])
+    return head(:forbidden) unless has_access(@user.id)
   end
 
   def new

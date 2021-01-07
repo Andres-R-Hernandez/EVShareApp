@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   # Defines the current user exists, and sets equal to session user
   def current_user
     if valid_session?
-      @current_user ||= User.find(session[:user_id])
+      User.find(session[:user_id])
     end
   end
 
