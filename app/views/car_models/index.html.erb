@@ -1,37 +1,11 @@
 <h2>Car Catalog</h2>
 
-<table>
+<% @car_models.each do |car| %>
+    <br><%= image_tag car.image_url %></br>
+    <br><%= link_to car.car_name, car%></br>
 
-  <% @car_models.each do |car| %>
-    <tr>
-      <br><%= image_tag car.image_url %></br>
-      <br><%= link_to car.car_name, car%></br>
-     
-      Inventory :<br><%= car.inventory %></br>
-      Avg Booking Rating :<%= car.avg_rating %></td>
+    Inventory :<br><%= car.inventory %></br>
+    Avg Booking Rating :<%= car.avg_rating %></br>
+<% end %>
 
-    </tr>
-  <% end %>
-</table>
 <%= button_to "Create Car Model", new_car_model_path, :method => :get  %>
-
-<!-- table code below -->
-
-<!--   <tr>
-    <th>Catalog #</th>
-    <th>Image</th>
-    <th>Car Name</th>
-    <th>Car Category</th>
-    <th>Description</th>
-    <th>Inventory</th>
-    <th>Avg Booking Rating</th>
-  </tr>
-  <% @car_models.each do |car| %>
-    <tr>
-      <td><%= link_to car.id, car %></td>
-      <td><img src="<% car.image_url %>" alt="<% car.car_name %>" ></td>
-      <td><%= car.car_name %></td>
-      <td><%= car.category %></td>
-      <td><%= car.description %></td>
-      <td><%= car.inventory %></td>
-      <td><%= car.avg_rating %></td> -->
