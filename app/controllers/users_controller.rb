@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
 
   def index
+    return head(:forbidden) unless is_admin?
     @users = User.all
   end
 
   def show
+    return head(:forbidden) unless has_access(params[:id])
     @user = User.find(params[:id])
   end
 
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     if @user.save
         session[:user_id] = @user.id
         redirect_to @user
@@ -24,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    return head(:forbidden) unless has_access(params[:id])
     @user = User.find(params[:id])
   end
 
@@ -39,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    return head(:forbidden) unless has_access(params[:id])
     User.find(params[:id]).destroy
     redirect_to "/"
   end

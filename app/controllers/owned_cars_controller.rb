@@ -1,12 +1,14 @@
 class OwnedCarsController < ApplicationController
 
     def index
-        @owned_cars = OwnedCar.all
+      return head(:forbidden) unless is_admin?
+      @owned_cars = OwnedCar.all
     end
 
     def show
-        @owned_car = OwnedCar.find(params[:id])
-        @booking = Booking.new
+      @owned_car = OwnedCar.find(params[:id])
+      return head(:forbidden) unless has_access(@owned_car.user_id)
+      @booking = Booking.new
     end
 
     def new
@@ -25,6 +27,7 @@ class OwnedCarsController < ApplicationController
 
     def edit
       @owned_car = OwnedCar.find(params[:id])
+      return head(:forbidden) unless has_access(@owned_car.user_id)
     end
 
     def update
@@ -39,13 +42,15 @@ class OwnedCarsController < ApplicationController
     end
 
     def destroy
-      OwnedCar.find(params[:id]).destroy
+      @owned_car = OwnedCar.find(params[:id])
+      return head(:forbidden) unless has_access(@owned_car.user_id)
+      @owned_car.destroy
       redirect_to "/"#session[:user_id]
     end
 
     private
 
     def owned_car_params
-        params.require(:owned_car).permit(:year, :price_per_day, :city, :car_model_id, :user_id)
+        params.require(:owned_car).permit(:year, :price_per_day, :city, :car_model_id, :user_id, :color)
     end
 end

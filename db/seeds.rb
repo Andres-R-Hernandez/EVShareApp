@@ -12,16 +12,17 @@ Review.destroy_all
 User.destroy_all
 WishListCar.destroy_all
 
+
 20.times do
     User.create(name: Faker::Name.name , age: Faker::Number.number(digits: 2), driver_id: Faker::IDNumber.valid, address: Faker::Address.full_address , email: Faker::Internet.email, password_digest: Faker::Lorem.paragraph)
 end
 
 20.times do
-    CarModel.create(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, description: Faker::Lorem.paragraphs, image_url: Faker::Avatar.image(slug: "my-own-slug",size: "50x50",format: "jpg"))
+    CarModel.create(category: Faker::Vehicle.car_type, brand: Faker::Vehicle.make, model: Faker::Vehicle.model, description: Faker::Lorem.paragraphs, image_url: Faker::Avatar.image(slug: "my-own-slug",size: "50x50",format: "jpg"))
 end
 
 20.times do
-    OwnedCar.create(year: Faker::Vehicle.year, price_per_day: Faker::Commerce.price, city: Faker::Address.city, car_model: CarModel.all.sample, user: User.all.sample)
+    OwnedCar.create(color: Faker::Color.color_name, year: Faker::Vehicle.year, price_per_day: Faker::Commerce.price, city: Faker::Address.city, car_model: CarModel.all.sample, user: User.all.sample)
 end
 
 20.times do
@@ -35,5 +36,9 @@ end
 20.times do
     WishListCar.create(car_model: CarModel.all.sample , user: User.all.sample)
 end
+
+#admin account
+User.create!(name: "admin", email: "admin", password: "password", password_confirmation: "password", admin: true)
+
 
 puts "running seeds"

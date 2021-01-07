@@ -4,6 +4,8 @@ Brand: <%= @car_model.brand %><br>
 <br>
 Model: <%= @car_model.model %><br>
 <br>
+Category: <%= @car_model.category %><br>
+<br>
 Description: <%= @car_model.description %><br>
 <%= button_to "Edit", edit_car_model_path(@car_model), method: :get %>
 <%= button_to "Delete Car Model", @car_model, method: :delete %>

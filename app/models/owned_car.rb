@@ -16,6 +16,7 @@ class OwnedCar < ApplicationRecord
   validates :city, presence: true
   validates :car_model_id, presence: true
   validates :user_id, presence: true
+  validates :color, presence: true
 
   def car_full_name
     year = self.year
