@@ -1,0 +1,7 @@
+<h1>Inventory for: <%= @car_model.car_name %></h1>
+
+<ul>
+<% @inventory.each do |car| %>
+   <li><%= link_to car.car_full_name, car %> 
+<% end %>
+</ul>

@@ -3,6 +3,13 @@ class CarModelsController < ApplicationController
     @car_models = CarModel.all
   end
 
+  def inventory
+    @car_model = CarModel.find(params[:id])
+    @inventory = OwnedCar.all.select do |owned_car|
+    owned_car.car_model == @car_model
+    end 
+  end 
+
   def show
     @car_model = CarModel.find(params[:id])
   end
