@@ -1,12 +1,12 @@
 <h1>Show Review</h1>
 
-Booking Time:<%= @review.booking.booking_time  %><br>
-Star: <%= @review.star_rating  %><br>
-<%= @review.description  %><br>
-<h3><%= @review.booking.owned_car.car_model.car_name %><h3>
-<br> 
-By <%= @review.user.name %><br>
-
-<%= link_to "Edit review", edit_review_path(@review) %>
+Booking Time: <%= @review.booking.pickup_time %> - <%= @review.booking.dropoff_time %><br>
 <br>
+<%= @review.booking.owned_car.car_full_name %> in <%= @review.booking.owned_car.city %><br>
+<br>
+<%= @review.description  %><br>
+Written By: <%= @review.user.name %><br>
+Rating: <%= @review.star_rating  %><br>
+<br>
+<%= button_to "Edit review", edit_review_path(@review), method: :get%>
 <%= button_to "Delete this review", @review, :method => :delete  %>

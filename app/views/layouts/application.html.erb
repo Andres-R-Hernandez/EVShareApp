@@ -14,7 +14,7 @@
     <hr>
     <center><h3>Navigation</h3></center>
     <p align="right"><%= link_to "Welcome Page", "/" %> <%= link_to "About", about_path %> <%= link_to "Car Index", car_models_path %></p>
-    <% if session[:user_id]%>
+    <% if User.all.map{|user|user.id}.any?(session[:user_id])%>
       <p align="right">
         <%= User.find(session[:user_id]).name %> is logged in!<br>
         <%= link_to "Account Profile", user_path(session[:user_id]) %><br>
@@ -23,7 +23,7 @@
     <% else %>
       <p align="right"><%= link_to "Log-in", login_path %></p>
     <% end %>
-    <%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %> <%= link_to "Wish List Index", wish_list_cars_path %>
+    <%= link_to "User Index", users_path %> <%= link_to "Booking Index", bookings_path %> <%= link_to "Owned Car Index", owned_cars_path %> <%= link_to "Wish List Index", wish_list_cars_path %> <%= link_to "Review Index", reviews_path %>
     <hr>
     <%= yield %>
   </body>

@@ -4,6 +4,12 @@ class OwnedCar < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
 
+  validates :year, presence: true
+  validates :price_per_day, presence: true
+  validates :city, presence: true
+  validates :car_model_id, presence: true
+  validates :user_id, presence: true
+
   def car_full_name
     year = self.year
     brand = self.car_model.brand

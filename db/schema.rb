@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_04_220948) do
+ActiveRecord::Schema.define(version: 2021_01_07_014502) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "owned_car_id"
     t.integer "user_id"
-    t.datetime "booking_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "pickup_time"
+    t.datetime "dropoff_time"
   end
 
   create_table "car_models", force: :cascade do |t|

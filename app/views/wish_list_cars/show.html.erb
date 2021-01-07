@@ -2,7 +2,6 @@
 
 <%= @wish_list_car.car_model.car_name  %><br>
 <%= @wish_list_car.user.name %><br>
-
-<%= link_to "Edit wish_list_car", edit_wish_list_car_path(@wish_list_car) %>
 <br>
+<%= button_to "Edit wish_list_car", edit_wish_list_car_path(@wish_list_car), method: :get %>
 <%= button_to "Delete this wish_list_car", @wish_list_car, :method => :delete  %>

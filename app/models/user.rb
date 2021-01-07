@@ -6,4 +6,11 @@ class User < ApplicationRecord
   has_many :owned_cars
   has_many :rentals, through: :bookings, source: :owned_car
   has_many :car_models, through: :wish_list_cars
+
+  validates :name, presence: true
+  # validates :password, presence: true
+  validates :password_digest, presence: true
+
+  validates :email, presence: true
+  validates :email, uniqueness: true
 end

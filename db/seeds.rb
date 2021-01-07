@@ -12,27 +12,27 @@ Review.destroy_all
 User.destroy_all
 WishListCar.destroy_all
 
-10.times do
+20.times do
     User.create(name: Faker::Name.name , age: Faker::Number.number(digits: 2), driver_id: Faker::IDNumber.valid, address: Faker::Address.full_address , email: Faker::Internet.email, password_digest: Faker::Lorem.paragraph)
 end
 
-10.times do
+20.times do
     CarModel.create(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, description: Faker::Lorem.paragraphs, image_url: Faker::Avatar.image(slug: "my-own-slug",size: "50x50",format: "jpg"))
 end
 
-10.times do
+20.times do
     OwnedCar.create(year: Faker::Vehicle.year, price_per_day: Faker::Commerce.price, city: Faker::Address.city, car_model: CarModel.all.sample, user: User.all.sample)
 end
 
-10.times do
-    Booking.create(owned_car: OwnedCar.all.sample, user: User.all.sample, booking_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1))
+20.times do
+    Booking.create(owned_car: OwnedCar.all.sample, user: User.all.sample, pickup_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 14.day), dropoff_time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 14.day))
 end
 
-10.times do
+20.times do
     Review.create(booking: Booking.all.sample, user: User.all.sample, description: Faker::Lorem.paragraphs, star_rating: Faker::Number.decimal(l_digits: 2))
 end
 
-10.times do
+20.times do
     WishListCar.create(car_model: CarModel.all.sample , user: User.all.sample)
 end
 
