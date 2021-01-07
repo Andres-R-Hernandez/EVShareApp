@@ -4,7 +4,7 @@
     <br><%= image_tag car.image_url %></br>
     <br><%= link_to car.car_name, car%></br>
 
-    Inventory :<br><%= car.inventory %></br>
+    Inventory :<br><%= link_to car.inventory, inventory_path(car)  %></br>
     Avg Booking Rating :<%= car.avg_rating %></br>
 <% end %>
 
