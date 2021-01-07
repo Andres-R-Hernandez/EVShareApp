@@ -10,8 +10,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   validates :password_digest, presence: true
-  # validates :password, length: { in: 6..10 }
-
   validates :email, presence: true
   validates :email, uniqueness: true
 
