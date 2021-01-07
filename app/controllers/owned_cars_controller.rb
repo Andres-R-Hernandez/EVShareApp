@@ -8,6 +8,7 @@ class OwnedCarsController < ApplicationController
     def show
       @owned_car = OwnedCar.find(params[:id])
       return head(:forbidden) unless has_access(@owned_car.user_id)
+      @booking = Booking.new
     end
 
     def new
