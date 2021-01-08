@@ -25,7 +25,7 @@
   <b>Requested EV Share App Cars:</b>
   <ul>
   <% @user.wish_list_cars.each do |wish| %>
-    <li><%= link_to wish.car_model.car_name, wish %>
+    <li><%= link_to wish.car_model.car_name, wish.car_model %>
   <% end %>
   </ul>
   <b>Upcoming Bookings: </b>

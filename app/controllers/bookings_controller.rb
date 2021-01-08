@@ -6,8 +6,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    return head(:forbidden) unless has_access(params[:id].to_i)
     @booking = Booking.find(params[:id])
+    return head(:forbidden) unless has_access(@booking.user_id)
   end
 
   def new
@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
-        redirect_to @booking
+        redirect_to current_user
     else
         render :new
     end
@@ -41,10 +41,10 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    return head(:forbidden) unless has_access(params[:id].to_i)
-    @booking = Booking.find_by(id: params[:id])
+    @booking = Booking.find(params[:id])
+    return head(:forbidden) unless has_access(@booking.user_id)
     @booking.destroy
-    redirect_to @booking
+    redirect_to current_user
   end
 
 
