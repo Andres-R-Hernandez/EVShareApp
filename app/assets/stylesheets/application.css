@@ -48,7 +48,7 @@ h2 {
 
 p {
   font-family: 'Arimo', sans-serif;
-
+  margin-block: center;
 }
 
 body, ol, ul, td {
