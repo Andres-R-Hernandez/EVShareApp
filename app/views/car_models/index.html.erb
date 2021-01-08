@@ -1,11 +1,20 @@
 <h2>Car Catalog</h2>
 
-<% @car_models.each do |car| %>
-    <br><%= image_tag car.image_url %></br>
-    <br><%= link_to car.car_name, car%></br>
-
-    Inventory :<br><%= link_to car.inventory, inventory_path(car)  %></br>
-    Avg Booking Rating :<%= car.avg_rating %></br>
-<% end %>
-
-<%= button_to "Create Car Model", new_car_model_path, :method => :get  %>
+<% count = 0 %>
+<table>
+  <tr>
+    <% @car_models.each do |car| %>
+      <td valign="top">
+        <h3><%= link_to car.car_name, car %></h3>
+        <b>Inventory: </b><%= link_to car.inventory, inventory_path(car) %><br>
+        <b>Avg Booking Rating: </b><%= car.avg_rating %><br>
+        <%= image_tag car.image_url, style: 'width:25vw;' %></br>
+        <% count += 1 %>
+      </td>
+      <% if count % 4 == 0 %>
+        </tr>
+        <tr>
+      <% end %>
+    <% end %>
+    </tr>
+</table>

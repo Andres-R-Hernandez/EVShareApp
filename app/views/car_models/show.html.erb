@@ -9,4 +9,4 @@ Category: <%= @car_model.category %><br>
 Description: <%= @car_model.description %><br>
 <%= button_to "Edit", edit_car_model_path(@car_model), method: :get %>
 <%= button_to "Delete Car Model", @car_model, method: :delete %>
-<img src="<%= @car_model.image_url %>" alt = "<%= @car_model.image_url %>" style="max-width:100% max-height:100vh margin:auto" >
+<%= image_tag @car_model.image_url, style: 'width:75vw;' %>
