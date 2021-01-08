@@ -1,12 +1,12 @@
-<h1>Show Owned Car</h1>
-
-<b>Car Name: <%= @owned_car.car_full_name_with_price %></b>
-<br>
-<b>Color: <%= @owned_car.color %><br></b>
-<br> | added by <%= @owned_car.user.name %><br>
-<br>
-<%= button_to "Edit Owned Car", edit_owned_car_path(@owned_car), method: :get %>
-<br>
-<%= button_to "Delete Owned Car", @owned_car, method: :delete %>
-
-<%= render "bookings/form" %>
+<div class="pad-left">
+  <h2><%= @owned_car.car_full_name %></h2>
+  Color: <%= @owned_car.color %><br>
+  <br>
+  | added by <%= @owned_car.user.name %><br>
+  <br>
+  Rental Price: <%= @owned_car.price_per_day %> per day!<br>
+  <br>
+  BOOK BELOW NOW!<br>
+  <br>
+  <%= render "bookings/form" %>
+</div>

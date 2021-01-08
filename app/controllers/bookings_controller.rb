@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    return head(:forbidden) unless has_access(params[:id])
+    return head(:forbidden) unless has_access(params[:id].to_i)
     @booking = Booking.find(params[:id])
   end
 
@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    return head(:forbidden) unless has_access(params[:id])
+    return head(:forbidden) unless has_access(params[:id].to_i)
     @booking = Booking.find(params[:id])
   end
 
@@ -41,7 +41,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    return head(:forbidden) unless has_access(params[:id])
+    return head(:forbidden) unless has_access(params[:id].to_i)
     @booking = Booking.find_by(id: params[:id])
     @booking.destroy
     redirect_to @booking

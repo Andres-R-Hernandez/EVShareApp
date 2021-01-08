@@ -1,38 +1,38 @@
-<h1 align="center">Profile: 
+<h1 align="center">Profile:
 <br><%= @user.name %> </h1>
-
-<b>Age: </b><%= @user.age %><br>
-<br>
-<b>Driver ID: </b><%= @user.driver_id %><br>
-<br>
-<b>Address: </b><%= @user.address %><br>
-<br>
-<b>Email: </b><%= @user.email %><br>
-<br>
-<b>Owned Cars: </b>
-<ul>
-<% @user.owned_cars.each do |car| %>
-  <li><%= link_to car.car_full_name, car %>
-<% end %>
-</ul>
-<%= button_to "Add my car to EV Share App Inventory!", new_owned_car_path, method: :get %>
-<br>
-<b>Requested EV Share App Cars:</b>
-<ul>
-<% @user.wish_list_cars.each do |wish| %>
-  <li><%= link_to wish.car_model.car_name, wish %>
-<% end %>
-</ul>
-<b>Upcoming Bookings: </b>
-<ol>
-<% @user.bookings.each do |booking| %>
-  <li><%= booking.owned_car.car_full_name %>: <%= link_to booking.pickup_time, booking %>
-<% end %>
-</ol>
-<br>
-<hr>
-<div class= "container">
-<%= button_to "Edit My Account Information", edit_user_path(@user), method: :get %>
-<%= button_to "Delete My Account", @user, method: :delete, data: { confirm:'Are you sure you want to delete your account? This action cannot be reversed!' }%>
+<div class="pad-left">
+  <b>Age: </b><%= @user.age %><br>
+  <br>
+  <b>Driver ID: </b><%= @user.driver_id %><br>
+  <br>
+  <b>Address: </b><%= @user.address %><br>
+  <br>
+  <b>Email: </b><%= @user.email %><br>
+  <br>
+  <b>Owned Cars: </b>
+  <ul>
+  <% @user.owned_cars.each do |car| %>
+    <li><%= link_to car.car_full_name, car %>
+  <% end %>
+  </ul>
+  <%= button_to "Add my car to EV Share App Inventory!", new_owned_car_path, method: :get %>
+  <br>
+  <b>Requested EV Share App Cars:</b>
+  <ul>
+  <% @user.wish_list_cars.each do |wish| %>
+    <li><%= link_to wish.car_model.car_name, wish %>
+  <% end %>
+  </ul>
+  <b>Upcoming Bookings: </b>
+  <ol>
+  <% @user.bookings.each do |booking| %>
+    <li><%= booking.owned_car.car_full_name %>: <%= link_to booking.pickup_time, booking %>
+  <% end %>
+  </ol>
+  <br>
+  <hr>
+  <div class= "container">
+  <%= button_to "Edit My Account Information", edit_user_path(@user), method: :get %>
+  <%= button_to "Delete My Account", @user, method: :delete, data: { confirm:'Are you sure you want to delete your account? This action cannot be reversed!' }%>
+  </div>
 </div>
-
