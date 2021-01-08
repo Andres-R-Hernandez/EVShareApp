@@ -15,10 +15,10 @@ class WishListCarsController < ApplicationController
   end
 
   def create
-    @wish_list_car = WishListCar.new(wish_list_cars_params)
+    @wish_list_car = WishListCar.new(wish_list_car_params)
     if @wish_list_car.valid?
         @wish_list_car.save
-        redirect_to @wish_list_car
+        redirect_to current_user
     else
         render :new
     end
