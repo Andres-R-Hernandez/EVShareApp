@@ -36,23 +36,42 @@
 }
 
 h1 {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Kufam', cursive;
   font-size: 40px;
   padding-left: 30px;
   padding-top: 30px
 }
 
 h2 {
+  font-family: 'Kufam', cursive;
   padding-left: 30px;
 }
 
+h3 {
+  font-family: 'Kufam', cursive;
+}
+
+h5 {
+  font-family: 'Kufam', cursive;
+}
+
+h6 {
+  font-family: 'Kufam', cursive;
+}
+
+h7 {
+  font-family: 'Kufam', cursive;
+}
+
 p {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   margin-block: center;
 }
 
 body, ol, ul, td {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Kufam', cursive;
+  font-family: 'Kufam', cursive;
+  
   color: #eee;
 }
 
@@ -60,7 +79,7 @@ body, ol, ul, td {
   border: 1px;
   padding: none;
   font-size: 20px;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 
@@ -102,7 +121,7 @@ pre {
 
 a {
   color: rgb(252, 246, 246);
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 /* Inventory link */
 a:visited {

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
     <title>EVShareApp</title>
@@ -33,12 +37,12 @@ body {font-family: 'Arimo', sans-serif}
 
     <h1 align="left">EV Share</h1>
     <hr>
-    <p align="right"><%= link_to "Welcome Page", "/", class: "nav-link" %> <%= link_to "About", about_path, class: "nav-link" %> <%= link_to "Car Index", car_models_path, class: "nav-link" %></p>
+    <h6 align="right"><%= link_to "Welcome Page", "/", class: "nav-link" %> <%= link_to "About", about_path, class: "nav-link" %> <%= link_to "Car Index", car_models_path, class: "nav-link" %></h6>
     <% if User.all.map{|user|user.id}.any?(session[:user_id])%>
-      <p align="right">
+      <h6 align="right">
         <%= link_to "Account Profile (#{current_user.name})", user_path(session[:user_id]), class: "nav-link" %><br>
         <%= link_to "Log-out", logout_path, method: :post, class: "nav-link" %>
-      </p>
+      </h6>
     <% else %>
       <p align="right"><%= link_to "Log-in", login_path, class: "nav-link" %></p>
     <% end %>
