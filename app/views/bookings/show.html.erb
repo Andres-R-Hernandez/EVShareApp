@@ -1,9 +1,12 @@
-<h1>Show Booking</h1>
+<h1>Booking Information</h1>
 
-Pickup Time: <%= @booking.pickup_time  %><br>
-Dropoff Time: <%= @booking.dropoff_time  %><br>
-Rental Car: <%= @booking.owned_car.car_full_name %><br>
-Booking created By: <%= @booking.user.name %><br><br>
+<div class="pad-left">
+  <%= image_tag @booking.owned_car.car_model.image_url, style: 'width:22vw;' %><br>
+  <br>
+  Pickup Time: <%= @booking.pickup_time  %><br>
+  Dropoff Time: <%= @booking.dropoff_time  %><br>
+  Rental Car: <%= @booking.owned_car.car_full_name %><br>
+  Booking created By: <%= @booking.user.name %><br><br>
 
-<%= button_to "Edit booking", edit_booking_path(@booking), method: :get %>
-<%= button_to "Delete this booking", @booking, :method => :delete  %>
+  <%= button_to "Delete this booking", @booking, :method => :delete  %>
+<div>

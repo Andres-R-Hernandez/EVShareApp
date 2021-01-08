@@ -1,4 +1,4 @@
-<h2><%= @car_model.car_name %> Show</h2>
+<h2><%= @car_model.car_name %></h2>
 
 <div class="pad-left">
   Brand: <%= @car_model.brand %><br>
@@ -6,6 +6,8 @@
   Model: <%= @car_model.model %><br>
   <br>
   Category: <%= @car_model.category %><br>
+  <br>
+  <%= button_to "Add car to My Wish List!", new_wish_list_car_path, :method => :get  %>
   <br>
   Description: <%= @car_model.description %><br>
   <%= image_tag @car_model.image_url, style: 'width:75vw;' %>

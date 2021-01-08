@@ -18,7 +18,7 @@ class OwnedCarsController < ApplicationController
         @owned_car = OwnedCar.new(owned_car_params)
         if @owned_car.valid?
             @owned_car.save
-            redirect_to @owned_car
+            redirect_to current_user
         else
             render :new
         end

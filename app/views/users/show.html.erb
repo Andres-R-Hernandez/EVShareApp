@@ -12,7 +12,12 @@
   <b>Owned Cars: </b>
   <ul>
   <% @user.owned_cars.each do |car| %>
-    <li><%= link_to car.car_full_name, car %>
+    <li><%= car.car_full_name %>
+      <ul>
+        <button><%= button_to "Edit My Car", edit_owned_car_path(car), method: :get %></button>
+        <button><%= button_to "Remove Car from Inventory", car, method: :delete, data: { confirm:'Are you sure you want to remove this car? This action cannot be reversed!' } %></button>
+      </ul>
+    </li>
   <% end %>
   </ul>
   <%= button_to "Add my car to EV Share App Inventory!", new_owned_car_path, method: :get %>
