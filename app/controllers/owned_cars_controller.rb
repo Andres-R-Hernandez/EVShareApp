@@ -44,7 +44,7 @@ class OwnedCarsController < ApplicationController
       @owned_car = OwnedCar.find(params[:id])
       return head(:forbidden) unless has_access(@owned_car.user_id)
       @owned_car.destroy
-      redirect_to "/"#session[:user_id]
+      redirect_to current_user
     end
 
     private
