@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    return head(:forbidden) unless has_access(params[:id])
+    return head(:forbidden) unless has_access(params[:id].to_i)
     @user = User.find(params[:id])
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    return head(:forbidden) unless has_access(params[:id])
+    return head(:forbidden) unless has_access(params[:id].to_i)
     User.find(params[:id]).destroy
     redirect_to "/"
   end

@@ -1,7 +1,12 @@
-<h1>Inventory for: <%= @car_model.car_name %></h1>
+<h2>Inventory for: <%= @car_model.car_name %></h2>
 
-<ul>
+<%= image_tag @car_model.image_url, class:"inventory-img" %>
+<ol>
 <% @inventory.each do |car| %>
-   <li><%= link_to car.car_full_name, car %> 
+  <li><%= link_to car.car_full_name, car %>
+    <ul>
+      Shared by: <%= car.user.name %>!
+    </ul>
+  </li>
 <% end %>
-</ul>
+</ol>
