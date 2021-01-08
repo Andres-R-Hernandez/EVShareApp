@@ -7,7 +7,7 @@
       <td valign="top">
         <div class="car-tile"">
           <h3><%= link_to car.car_name, car %></h3>
-          <b>Inventory: </b><%= link_to car.inventory, inventory_path(car) %><br>
+          <b><h7>Inventory: </h7><%= link_to car.inventory, inventory_path(car) %><br>
           <b>Avg Booking Rating: </b><%= car.avg_rating %><br>
           <%= image_tag car.image_url, style: 'width:24vw;' %></br>
         </div>
