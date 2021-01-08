@@ -37,7 +37,7 @@ body {font-family: 'Arimo', sans-serif}
 
     <h1 align="left">EV Share</h1>
     <hr>
-    <h6 align="right"><%= link_to "Welcome Page", "/", class: "nav-link" %> <%= link_to "About", about_path, class: "nav-link" %> <%= link_to "Car Index", car_models_path, class: "nav-link" %></h6>
+    <h6 align="right"><%= link_to "Welcome", "/", class: "nav-link" %> <%= link_to "Car Index", car_models_path, class: "nav-link" %></h6>
     <% if User.all.map{|user|user.id}.any?(session[:user_id])%>
       <h6 align="right">
         <%= link_to "Account Profile (#{current_user.name})", user_path(session[:user_id]), class: "nav-link" %><br>

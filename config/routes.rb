@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#welcome'
+  root 'static#about'
   resources :bookings
   resources :wish_list_cars
   resources :reviews
