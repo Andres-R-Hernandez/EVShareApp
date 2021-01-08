@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
     <title>EVShareApp</title>
+    <style>
+    html {
+  background:url("https://cdn.vox-cdn.com/thumbor/BRTRNXfEn6EjaZz-Nlfd3Jh_4pc=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/6455053/model-s-interior.0.jpg") no-repeat center center fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+  }
+    </style>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +21,9 @@
   </head>
 
   <body>
-    <center><h1>EV Share App!!!</h1></center>
+
+    <h1 align="left">EV Share</h1>
     <hr>
-    <center><h3>Navigation</h3></center>
     <p align="right"><%= link_to "Welcome Page", "/" %> <%= link_to "About", about_path %> <%= link_to "Car Index", car_models_path %></p>
     <% if User.all.map{|user|user.id}.any?(session[:user_id])%>
       <p align="right">

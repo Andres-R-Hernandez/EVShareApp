@@ -13,30 +13,50 @@
  *= require_tree .
  *= require_self
  */
- body {
+ /* body {
+  background-image: url("https://cdn.vox-cdn.com/thumbor/BRTRNXfEn6EjaZz-Nlfd3Jh_4pc=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/6455053/model-s-interior.0.jpg");
+  background-size: cover;
     background-color: rgb(253, 253, 253);
     color: rgb(250, 243, 243);
     margin: 33px; 
     text-align: center;
     
+  } */
+
+h1 {
+  font-family: 'Arimo', sans-serif;
+  font-size: 40px;
+}
+
+p {
+  font-family: 'Arimo', sans-serif;
+
+}
+
+  body, ol, ul, td {
+    font-family: 'Arimo', sans-serif;
+    color: #eee;
   }
 
-  body, p, ol, ul, td {
-    font-family: Roboto Mono;}
-
-   body  {
-    background-image: url("https://cdn.vox-cdn.com/thumbor/BRTRNXfEn6EjaZz-Nlfd3Jh_4pc=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/6455053/model-s-interior.0.jpg");
-    background-color: #cccccc;
-    background-repeat: no-repeat;
+  .btn {
+    border: 1px;
+    padding: none;
+    font-size: 20px;
+    font-family: 'Arimo', sans-serif;
   }
 
+
+  body  {
   
-  ody  {
-    background-image: url("https://i.pcmag.com/imagery/articles/07CJI9TpnjZfRDxGbFyx98I-1..1569487630.jpg");
-    background-color: #200505;
+    background-color: black;
     background-repeat: no-repeat;
-    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.7;
+
   }
+
+
   img.bg {
     overflow: hidden;
     /* Set rules to fill background */
@@ -63,10 +83,12 @@
     font-size: 11px; }
   
   a {
-    color: rgb(243, 235, 235); }
-  
+    color: rgb(252, 246, 246); 
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  /* Inventory link */
   a:visited {
-    color: #f6f4fd; }
+    color: #f8f7fc; }
   
   a:hover {
     color: rgb(24, 131, 231);
@@ -111,6 +133,6 @@
     list-style: square; }
   
   label {
-    display: block; }
+    display: block; } 
 
     
