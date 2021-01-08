@@ -76,8 +76,7 @@ body, ol, ul, td {
 }
 
 .btn {
-  border: 1px;
-  padding: none;
+  
   font-size: 20px;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -89,7 +88,7 @@ body  {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  opacity: 0.9;
+  opacity: 1;
 
 }
 

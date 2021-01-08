@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
-body {font-family: 'Arimo', sans-serif}
+body {font-family: 'Kufam', cursive;}
 </style>
 
     <%= csrf_meta_tags %>
@@ -37,7 +37,7 @@ body {font-family: 'Arimo', sans-serif}
 
     <h1 align="left">EV Share</h1>
     <hr>
-    <h6 align="right"><%= link_to "Welcome", "/", class: "nav-link" %> <%= link_to "Car Index", car_models_path, class: "nav-link" %></h6>
+    <h6 align="right"><%= link_to "Welcome", "/", class: "nav-link" %> <%= link_to "Catalog", car_models_path, class: "nav-link" %></h6>
     <% if User.all.map{|user|user.id}.any?(session[:user_id])%>
       <h6 align="right">
         <%= link_to "Account Profile (#{current_user.name})", user_path(session[:user_id]), class: "nav-link" %><br>
