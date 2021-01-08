@@ -1,10 +1,10 @@
 
 <%= form_for @booking do |f| %>
-  <%= f.label :pickup_time %>
+  <%= f.label :pickup_time %><br>
   <%= f.datetime_local_field :pickup_time %><br>
-  <%= f.label :dropoff_time %>
+  <%= f.label :dropoff_time %><br>
   <%= f.datetime_local_field :dropoff_time %><br>
-  <%= f.label :owned_car_id %>
+  <%= f.label :owned_car_id %><br>
   <%= f.collection_select :owned_car_id, OwnedCar.all, :id, :car_full_name_with_price %><br>
   <%= f.hidden_field :user_id, value: session[:user_id] %>
   <%= f.submit %>
