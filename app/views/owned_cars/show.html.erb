@@ -1,7 +1,9 @@
 <h1>Show Owned Car</h1>
 
-Car Name: <%= @owned_car.car_full_name_with_price %> | <b>added by<%= @owned_car.user.name %></b><br>
-Color: <%= @owned_car.color %><br>
+<b>Car Name: <%= @owned_car.car_full_name_with_price %></b>
+<br>
+<b>Color: <%= @owned_car.color %><br></b>
+<br> | added by <%= @owned_car.user.name %><br>
 <br>
 <%= button_to "Edit Owned Car", edit_owned_car_path(@owned_car), method: :get %>
 <br>
