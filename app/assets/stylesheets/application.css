@@ -13,32 +13,64 @@
  *= require_tree .
  *= require_self
  */
- /* body {
+ body {
     background-color: rgb(253, 253, 253);
-    color: #333;
+    color: rgb(250, 243, 243);
     margin: 33px; 
     text-align: center;
     
   }
-  
+
   body, p, ol, ul, td {
-   font-family: Roboto Mono light}
+    font-family: Roboto Mono;}
+
+   body  {
+    background-image: url("https://cdn.vox-cdn.com/thumbor/BRTRNXfEn6EjaZz-Nlfd3Jh_4pc=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/6455053/model-s-interior.0.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+  }
 
   
+  ody  {
+    background-image: url("https://i.pcmag.com/imagery/articles/07CJI9TpnjZfRDxGbFyx98I-1..1569487630.jpg");
+    background-color: #200505;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  img.bg {
+    overflow: hidden;
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1920px;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  @media screen and (max-width: 1080px) { /* Specific to this particular image */
+    img.bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+  }
+
   pre {
     background-color: #eee;
     padding: 10px;
     font-size: 11px; }
   
   a {
-    color: #000; }
+    color: rgb(243, 235, 235); }
   
   a:visited {
-    color: #757479; }
+    color: #f6f4fd; }
   
   a:hover {
-    color: rgb(174, 235, 166);
-    background-color: rgb(199, 194, 194); }
+    color: rgb(24, 131, 231);
+   }
   
   th {
     padding-top: 15px; }
@@ -79,4 +111,6 @@
     list-style: square; }
   
   label {
-    display: block; } */
+    display: block; }
+
+    
