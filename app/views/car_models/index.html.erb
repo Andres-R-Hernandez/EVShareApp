@@ -5,10 +5,12 @@
   <tr>
     <% @car_models.each do |car| %>
       <td valign="top">
-        <h3><%= link_to car.car_name, car %></h3>
-        <b>Inventory: </b><%= link_to car.inventory, inventory_path(car) %><br>
-        <b>Avg Booking Rating: </b><%= car.avg_rating %><br>
-        <%= image_tag car.image_url, style: 'width:25vw;' %></br>
+        <div class="car-tile"">
+          <h3><%= link_to car.car_name, car %></h3>
+          <b>Inventory: </b><%= link_to car.inventory, inventory_path(car) %><br>
+          <b>Avg Booking Rating: </b><%= car.avg_rating %><br>
+          <%= image_tag car.image_url, style: 'width:24vw;' %></br>
+        </div>
         <% count += 1 %>
       </td>
       <% if count % 4 == 0 %>
@@ -18,4 +20,3 @@
     <% end %>
     </tr>
 </table>
-
