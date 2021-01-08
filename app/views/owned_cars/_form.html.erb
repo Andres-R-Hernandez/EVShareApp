@@ -1,3 +1,18 @@
+<% if @owned_car.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@owned_car.errors.count, "error") %>
+      prohibited this car from being saved:
+    </h2>
+
+    <ul>
+    <% @owned_car.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @owned_car do |f| %>
 
   <%= f.label :car_model_id %>

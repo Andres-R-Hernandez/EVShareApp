@@ -1,3 +1,18 @@
+<% if @car_model.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@car_model.errors.count, "error") %>
+      prohibited this car model from being created:
+    </h2>
+
+    <ul>
+    <% @car_model.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @car_model do |f| %>
   <%= f.label :brand%>
   <%= f.text_field :brand%><br>

@@ -1,7 +1,22 @@
+<% if @wish_list_car.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@wish_list_car.errors.count, "error") %>
+      prohibited this wish from being created:
+    </h2>
+
+    <ul>
+    <% @wish_list_car.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @wish_list_car do |f| %>
-  
+
   <%= f.label :car_model_id %>
   <%= f.collection_select :car_model_id, CarModel.all, :id, :car_name %>
   <%= f.hidden_field :user_id, value: session[:user_id] %>
   <%= f.submit %>
-<% end %>             
+<% end %>
